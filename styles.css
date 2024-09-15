@@ -1,0 +1,160 @@
+/* Mengatur dasar tampilan */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #0b1e39;
+    background-image: linear-gradient(180deg, #0b1e39, #1d2a56);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Tambahkan elemen bintang */
+body::before {
+    content: "";
+    position: absolute;
+    width: 3000px;
+    height: 3000px;
+    background: radial-gradient(circle, white, transparent 50%);
+    background-size: 3px 3px;
+    top: -1000px;
+    left: -1000px;
+    z-index: 1;
+    animation: animateStars 200s linear infinite;
+    opacity: 0.6;
+}
+
+/* Animasi bintang */
+@keyframes animateStars {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100px, 100px);
+    }
+}
+
+/* Container utama */
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+/* Judul halaman */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcc00;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #0b1e39;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+#result {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Planet elemen */
+.planet {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30%, #ffb74d, #f57c00);
+    box-shadow: 0 0 60px rgba(255, 140, 0, 0.7);
+    top: 10%;
+    left: -120px;
+    animation: rotatePlanet 50s linear infinite;
+}
+
+@keyframes rotatePlanet {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(100vw) translateY(150px) rotate(180deg);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(360deg);
+    }
+}
+
+/* Gaya untuk pesan kesalahan */
+#result p {
+    margin: 10px 0;
+}
+
+#result p[style="color:red;"] {
+    background-color: #ff5252;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ff1e1e;
+    color: white;
+}
+
+
